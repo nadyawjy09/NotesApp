@@ -17,7 +17,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
             android:src="@drawable/avatar_nadya"
-            app:shapeAppearanceOverlay="@style/RoundedImageView" />
+            app:shapeAppearanceOverlay="@style/RoundedImage" />
 
         <TextView
             android:layout_width="match_parent"

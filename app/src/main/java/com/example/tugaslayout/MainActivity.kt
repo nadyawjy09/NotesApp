@@ -10,16 +10,25 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.tugaslayout.databinding.ActivityMainBinding
+import com.example.tugaslayout.HNote
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     private var aboutMeBtn: Button? = null
     private var kalkulatorBtn: View? = null // Ubah ke View karena onClick di XML menggunakan LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
         // Inisialisasi tombol
         aboutMeBtn = findViewById(R.id.button_about_me)
@@ -28,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         // Menetapkan listener dengan safe call
         aboutMeBtn?.setOnClickListener { showAboutMeDialog() }
         kalkulatorBtn?.setOnClickListener { goToKalkulator() }
+
         // Menangani window insets (untuk padding)
         ViewCompat.setOnApplyWindowInsetsListener(
             findViewById(R.id.main)
@@ -57,6 +67,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToKalkulator() {
         val intent = Intent(this, kalkulator::class.java) // Pastikan nama kelas benar
+        startActivity(intent)
+    }
+
+
+    fun goToNotes (view:View) {
+        val intent = Intent(this,HNote::class.java)
+        startActivity(intent)
+    }
+
+    fun goToBook(view: View) {
+        val intent = Intent(this,HBook::class.java)
         startActivity(intent)
     }
 

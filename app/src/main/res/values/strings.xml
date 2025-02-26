@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Nadya</string>
     <string name="logo_description">Logo Perusahaan</string>
+    <string name="title">My Applican</string>
+    <string name="username">Nadya Septrijayani Khairunnisa</string>
+    <string name="nama">Nama :Nadya Septrijayani Khairunnisa</string>
+    <string name="kelas">Kelas :XII</string>
+    <string name="absen">Absen :23</string>
+    <string name="exit">Keluar</string>
+    <string name="tglpembuatan">Tanggal Pembuatan: 15 Februari 2025</string>
+    <string name="version">Version Control: 1.0</string>
 </resources>

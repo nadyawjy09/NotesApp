@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (sqliteHelper.checkLogin(username, password)) {
+            if (sqliteHelper.readUser(username, password)) { // Menggunakan readUser sebagai pengganti checkLogin
                 Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
             .setTitle("Konfirmasi Hapus")
             .setMessage("Apakah Anda yakin ingin menghapus semua data pengguna?")
             .setPositiveButton("Ya") { _, _ ->
-                if (sqliteHelper.deleteAllUsers()) {
+                if (sqliteHelper.deleteAllUsers()) { // Menggunakan deleteAllUsers yang baru ditambahkan
                     Toast.makeText(this, "Semua data berhasil dihapus", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, SignupActivity::class.java))
                     finish()
@@ -95,4 +95,13 @@ class LoginActivity : AppCompatActivity() {
             .setCancelable(false)
             .show()
     }
+}
+
+// Tambahkan fungsi berikut di DatabaseHelper:
+
+fun DatabaseHelper.deleteAllUsers(): Boolean {
+    val db = writableDatabase
+    val deletedRows = db.delete("data", null, null)
+    db.close()
+    return deletedRows > 0
 }

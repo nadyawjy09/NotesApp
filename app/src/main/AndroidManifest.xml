@@ -12,19 +12,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasLayout"
         tools:targetApi="31">
-
-        <!-- LoginActivity sebagai activity pertama -->
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".HBook"
+            android:exported="false" />
+        <activity
+            android:name=".AddBook"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateNote"
+            android:exported="false" />
+        <activity
+            android:name=".AddNote"
+            android:exported="false" />
+        <activity
+            android:name=".HNote"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".kalkulator" />
-        <activity android:name=".SignupActivity"/>
+        <!-- LoginActivity sebagai activity pertama -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".kalkulator" />
+        <activity android:name=".SignupActivity" />
     </application>
 
 </manifest>

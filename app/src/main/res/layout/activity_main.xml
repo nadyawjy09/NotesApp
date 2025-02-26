@@ -40,7 +40,7 @@
                 android:layout_height="70dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/avatar_nadya"
-                app:shapeAppearanceOverlay="@style/RoundedImageView"
+                app:shapeAppearanceOverlay="@style/RoundedImage"
                 />
 
             <LinearLayout
@@ -180,6 +180,54 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <!-- Item Note -->
+                <LinearLayout
+                    android:id="@+id/note"
+                    android:layout_width="match_parent"
+                    android:layout_height="131dp"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:text="Go to Note"
+                    android:onClick="goToNotes">
+
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/notee"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/judul9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Project Sekolah: Note Sederhana"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="I designed and coded a simple note with a focus on easy-to-use functionality and a simple interface."
+                            android:textColor="#000"
+                            android:textSize="14sp" />
+
+
+                        <ImageView
+                            android:id="@+id/note1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/canva" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
                 <!-- Item Kalkulator -->
                 <LinearLayout
                     android:id="@+id/kalkulator"
@@ -218,11 +266,11 @@
                             android:textSize="14sp" />
 
 
-                            <ImageView
-                                android:id="@+id/kalkulator1"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                app:srcCompat="@drawable/androidstudio" />
+                        <ImageView
+                            android:id="@+id/kalkulator1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/androidstudio" />
 
                     </LinearLayout>
 
@@ -233,6 +281,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="131dp"
                     android:orientation="horizontal"
+                    android:onClick="goToBook"
                     android:padding="8dp">
 
                     <ImageView
